@@ -4,7 +4,7 @@ Upgrade the ACS cluster by running the given script
 
 ## Disclaimer
 
-This is performed on own risk.
+**This is performed at own risk.**
 
 Not yet tested on v 1.10.X and above.
 
@@ -23,7 +23,7 @@ The script is intended to be executed on a running cluster.
 It will drain a node, upgrade and uncordon it before moving on to the next node.
 
 If you have few resources available in the cluster you can add on a new node so that
-you are in the current state + 1 node, and then do the upgrade. In this way you will have the same resources availabel during upgrade as current.
+you are in the current state + 1 node, and then do the upgrade. In this way you will have the same resources available during upgrade as current.
 
 After successful upgrade the +1 node can be drained and deleted.
 
