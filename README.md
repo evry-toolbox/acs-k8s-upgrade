@@ -31,6 +31,8 @@ After successful upgrade the +1 node can be drained and deleted.
 
 To upgrade the cluster run this script on the master machine
 
+Give the current version and the new version of Kubernetes cluster.
+
 ```
 curl https://raw.githubusercontent.com/evry-toolbox/acs-k8s-upgrade/master/upgrade.sh | sudo bash -s -- 1.7.7 1.8.4
 ```
