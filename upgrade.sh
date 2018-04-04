@@ -28,7 +28,7 @@ nodes=$(kubectl get no -L kubernetes.io/role -l kubernetes.io/role=agent --no-he
 
 for node in $nodes; do
     echo "Cordoning $node..." && kubectl cordon $node && \
-    echo "Draining $node..." && kubectl drain $node --ignore-daemonsets && \
+    echo "Draining $node..." && kubectl drain $node --ignore-daemonsets --delete-local-data && \
     ssh -n -l $(logname) -i /home/$(logname)/.ssh/$SSH_KEY -t -oStrictHostKeyChecking=no $node "echo 'Working on $node...' && curl -LOk $SCRIPT_URL && sudo bash node_upgrade.sh $CURRENT_VERSION $TARGET_VERSION" && \
     echo "Uncordoning $node..." && kubectl uncordon $node
 done
