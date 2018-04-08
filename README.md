@@ -12,9 +12,18 @@ Not yet tested on v 1.10.X and above.
 ## Prerequisites
 
 The master must be able to log in to the nodes.
+Log on to the master and generate an SSH key with an empty passphrase, if necessary:
+```
+ssh-keygen -t rsa -f ~/.ssh/id_rsa -P ""
+
+```
 Add the masters public key to each of the nodes.
 
 In azure portal do so by adding the public key to the "Reset password" section of each node.
+Alternatively, use the Azure CLI:
+```
+az vm user update -u azureuser --ssh-key-value "<public key>" -n <node> -g <resource group>
+```
 
 ## What it does
 
