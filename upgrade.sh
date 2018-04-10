@@ -18,7 +18,7 @@ SCRIPT_URL="https://raw.githubusercontent.com/evry-toolbox/acs-k8s-upgrade/maste
 SCRIPT_URL_MASTER="https://raw.githubusercontent.com/evry-toolbox/acs-k8s-upgrade/master/master_upgrade.sh"
 SSH_KEY="id_rsa"
 
-if [ ! -f /home/$(logname)/.ssh/$SSH_KEY]; then
+if [ ! -f "/home/$(logname)/.ssh/$SSH_KEY" ]; then
     echo "Error: Missing SSH key file. You must remember to generate an SSH key and distribute the public key to all nodes before running the upgrade"
     exit 0
 fi
